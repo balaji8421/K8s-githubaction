@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-mydeploy
+  labels:
+    app: app-mydeploy
+spec:
+  selector:
+    matchLabels:
+      app: mydeploy
+  template:
+    metadata:
+      labels:
+        app: mydeploy
+    spec:   
+      containers:   
+        - name: appdeploy   
+          image: niranjanv64/microsvc-static-1:v1  
+          containerPort: 7050   
+          args: ["-Dspring.config.location=/opt/config/application.yml","com.microsvc.static1.Static1Application"]
+          imagePullPolicy: Always
+          volumeMounts:
+          - mountPath: ConfigMap
+            name: map-mydeploy
+      volumes:
+      - name: map-mydeploy
+        configMap: 
+            name: map-mydeploy
+            items:
+                - key: ConfigMap
+                  path: ConfigMap
+              
