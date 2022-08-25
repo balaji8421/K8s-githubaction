@@ -15,8 +15,7 @@ spec:
     spec:   
       containers:   
         - name: appdeploy   
-          image: niranjanv64/microsvc-static-1
-          tag: v1 
+          image: niranjanv64/microsvc-static-1:v1 
           ports: 
             - containerPort: 7050   
           args: ["-Dspring.config.location=/opt/config/application.yml","com.microsvc.static1.Static1Application"]
