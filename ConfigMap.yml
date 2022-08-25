@@ -6,14 +6,6 @@ metadata:
 
 data: 
    application.yml: |
-     spring:
-     application:
-            name: microsvc-static-1
-    main:
-     allow-bean-definition-overriding: true
-
-    server:
-    port: 7050
     app:
      env:
        color: yellow

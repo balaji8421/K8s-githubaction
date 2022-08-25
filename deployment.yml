@@ -16,11 +16,11 @@ spec:
       containers:   
         - name: appdeploy   
           image: niranjanv64/microsvc-static-1:v1  
-          containerPort: 7050   
+          ports: 
+            - containerPort: 7050   
           args: ["-Dspring.config.location=/opt/config/application.yml","com.microsvc.static1.Static1Application"]
-          imagePullPolicy: Always
           volumeMounts:
-          - mountPath: ConfigMap
+          - mountPath: /opt/config/application.yml
             name: map-mydeploy
       volumes:
       - name: map-mydeploy
@@ -28,5 +28,4 @@ spec:
             name: map-mydeploy
             items:
                 - key: ConfigMap
-                  path: ConfigMap
-              
+                  path: /opt/config/application.yml
