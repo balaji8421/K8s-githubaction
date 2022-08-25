@@ -5,7 +5,7 @@ metadata:
   namespace: default
 
 data: 
-   application.yml: |
+   application.conf: |
     app:
      env:
        color: yellow
