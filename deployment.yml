@@ -20,7 +20,7 @@ spec:
             - containerPort: 7050   
           args: ["-Dspring.config.location=/opt/config/application.yml","com.microsvc.static1.Static1Application"]
           volumeMounts:
-          - mountPath: /opt/config/application.yml
+          - mountPath: application.yml
             name: map-mydeploy
       volumes:
       - name: map-mydeploy
@@ -28,4 +28,4 @@ spec:
             name: map-mydeploy
             items:
                 - key: ConfigMap
-                  path: /opt/config/application.yml
+                  path: application.yml
