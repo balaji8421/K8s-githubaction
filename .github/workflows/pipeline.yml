@@ -11,7 +11,6 @@ env:
   GKE_ZONE: us-central1-c                     
   DEPLOYMENT_NAME: deployment
   IMAGE: niranjanv64/microsvc-static-1
-  TAG: latest
     
 jobs:
   build-push:
@@ -59,7 +58,7 @@ jobs:
  # Push the Docker image to Google Container Registry+
     - name: Publish
       run: |-
-        docker tag $IMAGE:latest "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
+        docker tag $IMAGE:v1 "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
         docker push "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
            
                   
