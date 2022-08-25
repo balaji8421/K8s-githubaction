@@ -11,7 +11,7 @@ env:
   GKE_ZONE: us-central1-c                     
   DEPLOYMENT_NAME: deployment
   IMAGE: niranjanv64/microsvc-static-1
-    
+  TAG: v1  
 jobs:
   build-push:
     name: Build, Push and deploy app to gke
