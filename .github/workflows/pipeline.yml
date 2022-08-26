@@ -52,7 +52,7 @@ jobs:
       run: |-
         docker pull niranjanv64/microsvc-static-1:v1
         docker images
-        docer tag $IMAGE:v1 "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
+        docker tag $IMAGE:v1 "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
 
     # Push the Docker image to Google Container Registry+
     - name: Publish
