@@ -64,7 +64,7 @@ jobs:
       run: |-
          kubectl apply -f ConfigMap.yml
          kubectl apply -f deployment.yml
-         kubectl apply -f my-np-service.yaml
+         kubectl apply -f np-service.yml
 #         kubectl rollout status deployment/$DEPLOYMENT_NAME
 #         kubectl get services -o wide
          
