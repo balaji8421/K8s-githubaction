@@ -47,6 +47,13 @@ jobs:
 #     run: |-
 #        docker build --tag "gcr.io/$PROJECT_ID/$IMAGE:$TAG" .
 
+    # Pull the Docker image and taged it.
+    - name: Pull 
+      run: |-
+        docker pull -a niranjanv64/microsvc-static-1
+        docker images
+        docer tag $IMAGE:v1 "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
+
     # Push the Docker image to Google Container Registry+
     - name: Publish
       run: |-
@@ -60,5 +67,4 @@ jobs:
 #         kubectl rollout status deployment/$DEPLOYMENT_NAME
 #         kubectl get services -o wide
          
-           
                   
