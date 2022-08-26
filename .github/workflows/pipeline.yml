@@ -50,7 +50,7 @@ jobs:
     # Pull the Docker image and taged it.
     - name: Pull 
       run: |-
-        docker pull -a niranjanv64/microsvc-static-1
+        docker pull niranjanv64/microsvc-static-1
         docker images
         docer tag $IMAGE:v1 "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
 
