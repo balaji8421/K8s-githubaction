@@ -47,7 +47,11 @@ jobs:
 #     run: |-
 #        docker build --tag "gcr.io/$PROJECT_ID/$IMAGE:$TAG" .
 
-   
+    # Push the Docker image to Google Container Registry+
+    - name: Publish
+      run: |-
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
+           
     # Deploy sample image to the GKE cluster      
     - name: Deploy
       run: |-
@@ -56,9 +60,5 @@ jobs:
 #         kubectl rollout status deployment/$DEPLOYMENT_NAME
 #         kubectl get services -o wide
          
- # Push the Docker image to Google Container Registry+
-    - name: Publish
-      run: |-
-        docker push "gcr.io/$PROJECT_ID/$IMAGE"
            
                   
